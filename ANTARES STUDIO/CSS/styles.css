@@ -1,0 +1,152 @@
+@import url('https://fonts.cdnfonts.com/css/rebellion-knight-personal-use-o');/*Fuente 2*/            
+
+#contHeader{
+    background:#B20404; /*bg header*/
+}
+
+#navStyle{
+    background:#B20404 /*linear-gradient(rgb(255, 0, 0), rgb(255, 0, 0)); /*bg nav*/
+}
+body{
+    background: #111111;
+}
+
+main{
+    background: #ff00005e ;
+}
+footer{
+    background:#B20404;
+    color: #f3f3f3;
+}
+
+/*#contHeader h1{
+    font-family: 'Rebellion Knight Personal Use O', sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #f3f3f3;
+    margin-left: 10px;
+    margin-top: 10px;   
+}*/
+
+.navbar a{/*formato a los li*/
+    font-size: 3vh; 
+    color: #f3f3f3!important;
+}
+
+@font-face{
+    font-family: 'Letters for Learners';
+    src: url(/Fuentes/Letters-for-Learners.ttf), format('truetype');
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-family:'Letters for Learners', cursive;
+}
+
+
+.overBG{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+
+    position: relative;
+    z-index: 2; /*lo que hace es que coloca el conenedor sobre los otros, pero no funciona si el elemento no esta posicionado*/
+}
+
+.overBG h1 {
+    font-family:'Letters for Learners', cursive;
+    font-size: 3rem;
+    text-align:center;
+    color: #f3f3f3;
+    font-weight: 700;
+}
+
+.overBG p { /*. es un selector*/
+    font-family:'Letters for Learners', cursive;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #f3f3f3;
+    font-weight: 900;
+}
+
+button{
+    display: inline-block;
+    border: none;
+    height: 50px;
+    border-radius: 30px;
+    padding: 10px 0;
+    width: 200px;
+    background-color:#ff00008e;
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-weight: 800;
+    transition: 150ms;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+button:focus{
+    outline: none;
+}
+
+button:hover{
+    transform:translate(0, -5px);
+}
+
+#bannerVideo{
+    min-height: 100vh;/*para qque ocupe el alto completo de la pantalla*/
+    position:relative; /*al contenedor padre porque vamos a usar el absolute para el video, entonces el contenedor padre no debe ser estatico*/
+}
+
+video{
+    position: absolute;
+    top: 0;
+    left: 0; /*aqui para que este encima*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/*para que utilice el ancho y alto completo del contenedor padre va ser responsive*/
+}
+
+/*colocar la capa sobre el contenedor padre*/
+.capa{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1c1c1d;
+    opacity: 0.5;
+    mix-blend-mode: overlay;/*overlay oscurese o aclara la capa dependiendo del fondo*/
+}
+
+
+/*Scroll de imagenes*/
+@keyframes show{
+    from{/*cuando as imagenes se inicien que sean transparentes y con un 25% de su tamaño*/
+        opacity: 0;
+        scale: 25%;
+    }
+    to{/*para terminar que se pueda ver y sea al 100% de su tamaño*/
+        opacity: 1;
+        scale: 100%;
+    }
+}
+
+/*vamos a estirar las images*/
+
+img { 
+    view-timeline-name: --image; /*este va estar nlazado al scrol*//*y si va estar en vertical o horizontal*/
+    view-timeline-axis: block;
+
+    animation-timeline: --image;
+    animation-name: show;
+
+    animation-range: entry 25% cover 50%; /*cuando este al 25% comience a animarla*/
+    animation-fill-mode: both;
+}
